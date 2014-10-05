@@ -1,14 +1,10 @@
 package in.co.nitro.stockfilter;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
@@ -71,9 +67,7 @@ public class LocalStore {
 	}
 	
 	public void copy(InputStream inputStream, File dst) throws IOException {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 	    FileOutputStream outStream = new FileOutputStream(dst);
-	    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outStream));
 	    // Transfer bytes from in to out
 	    byte[] buf = new byte[1024];
 	    int len;

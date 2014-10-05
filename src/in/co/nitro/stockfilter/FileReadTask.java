@@ -3,7 +3,6 @@ package in.co.nitro.stockfilter;
 import java.util.List;
 
 import android.annotation.SuppressLint;
-import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
