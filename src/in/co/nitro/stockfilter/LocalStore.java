@@ -75,10 +75,10 @@ public class LocalStore {
 	    FileOutputStream outStream = new FileOutputStream(dst);
 	    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outStream));
 	    // Transfer bytes from in to out
-	    char[] buf = new char[1024];
+	    byte[] buf = new byte[1024];
 	    int len;
-	    while ((len = reader.read(buf,0,1024)) > 0) {
-	    	writer.write(buf, 0, len);
+	    while ((len = inputStream.read(buf,0,1024)) > 0) {
+	    	outStream.write(buf, 0, len);
 	    }
 	    inputStream.close();
 	    outStream.close();
