@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Bisque"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="in.co.nitro.stockfilter.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/name" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignLeft="@+id/editText2"
+        android:ems="10"
+        android:hint="@string/wildcardFilter"
+        android:inputType="textCapCharacters"
+        android:nextFocusDown="@+id/editText2" >
+
+        <requestFocus />
+        <requestFocus />
+
+    </EditText>
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/listView1"
+        android:layout_below="@+id/nameView"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/codeView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="@color/LightCoral"
+            android:gravity="center_horizontal"
+            android:text="@string/nameTItle" />
+
+        <TextView
+            android:id="@+id/typeView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@color/LightCoral"
+            android:gravity="center_horizontal"
+            android:text="@string/previousCloseTitle" />
+
+        <TextView
+            android:id="@+id/groupView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="0.5"
+            android:background="@color/LightCoral"
+            android:gravity="center_horizontal"
+            android:text="@string/ltpTitle" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_centerHorizontal="true" >
+    </ListView>
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/header"
+        android:layout_alignTop="@+id/editText1"
+        android:enabled="false"
+        android:nextFocusDown="@+id/editText1"
+        android:onClick="onFilter"
+        android:text="@string/filter" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/openView"
+        android:layout_alignBottom="@+id/openView"
+        android:layout_toRightOf="@+id/openView"
+        android:ems="10"
+        android:hint="@string/ltpRange"
+        android:inputType="text|numberDecimal"
+        android:nextFocusDown="@+id/editText3" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/closeView"
+        android:layout_alignBottom="@+id/closeView"
+        android:layout_toRightOf="@+id/closeView"
+        android:ems="10"
+        android:hint="@string/ltpRange"
+        android:inputType="numberDecimal"
+        android:nextFocusDown="@+id/button1" />
+
+    <TextView
+        android:id="@+id/closeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText2"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_toRightOf="@+id/editText2"
+        android:text="@string/lessThan"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/openView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nameView"
+        android:layout_alignBottom="@+id/nameView"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/nameView"
+        android:text="@string/greaterThan"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="20dp"
+        android:text="@string/lastPrice" />
+
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Stock Filter</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="name">Name</string>
+    <string name="filter">Filter</string>
+    <string name="lastPrice">Last Price</string>
+    <string-array name="operator">
+        <item >&lt;</item>
+        <item >=</item>
+        <item >&gt;</item>
+    </string-array>
+        <string name="nameTItle">Instrument</string>
+        <string name="ltpTitle">LTP</string>
+        <string name="previousCloseTitle">Previous</string>
+        <string name="greaterThan">&gt;</string>
+        <string name="lessThan">&lt;</string>
+        <string name="code">Code</string>
+        <string name="group">Group</string>
+        <string name="type">Type</string>
+        <string name="open">Open</string>
+        <string name="close">Close</string>
+        <string name="high">High</string>
+        <string name="low">Low</string>
+        <string name="previous">Previous</string>
+        <string name="ltp">LTP</string>
+        <string name="totalTrades">Total Trades</string>
+        <string name="totalShares">Total Shares</string>
+        <string name="okay">Okay</string>
+        <string name="turnover">Turnover</string>
+        <string name="wildcardFilter">e.g. AB?C*</string>
+        <string name="ltpRange">decimal</string>
+
+</resources>
