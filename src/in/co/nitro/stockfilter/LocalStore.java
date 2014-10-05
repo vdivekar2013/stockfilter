@@ -44,7 +44,7 @@ public class LocalStore {
 	
 	public File createFile(String dirName, String fileName) throws IOException {
 		String dirPath = null == dirName ? context.getFilesDir().getAbsolutePath() + File.separator + fileName :
-								 dirName + File.separator + fileName;
+								 dirName + fileName;
 		File file = new File(dirPath);
 		if(!file.exists())
 			file.createNewFile();
