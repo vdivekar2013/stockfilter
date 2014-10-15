@@ -14,6 +14,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
 public class FileReadTask extends AsyncTask<MainActivity,Void,List<Instrument>> {
 
 	private MainActivity activity;
@@ -31,6 +35,12 @@ public class FileReadTask extends AsyncTask<MainActivity,Void,List<Instrument>> 
 		Button filterButton = (Button) activity.findViewById(R.id.button1);
 		if(filterButton != null)
 			filterButton.setEnabled(true);
+		// Look up the AdView as a resource and load a request.
+		AdView adView = (AdView)activity.findViewById(R.id.adView);
+//		adView.setAdSize(AdSize.BANNER);
+//		adView.setAdUnitId("ca-app-pub-5650476482162625/4038884190");
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
 		MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(activity, instrumentList);
 		if(listview != null) {
 			listview.setAdapter(adapter);
@@ -42,17 +52,17 @@ public class FileReadTask extends AsyncTask<MainActivity,Void,List<Instrument>> 
 				}
 				@SuppressLint("NewApi")
 				private void showInstrumentDetails(Instrument instrument) {
-					 FragmentTransaction ft = activity.getFragmentManager().beginTransaction();
-					    Fragment prev = activity.getFragmentManager().findFragmentByTag("dialog");
-					    if (prev != null) {
-					        ft.remove(prev);
-					    }
-					    ft.addToBackStack(null);
+					FragmentTransaction ft = activity.getFragmentManager().beginTransaction();
+					Fragment prev = activity.getFragmentManager().findFragmentByTag("dialog");
+					if (prev != null) {
+						ft.remove(prev);
+					}
+					ft.addToBackStack(null);
 
-					    // Create and show the dialog.
-					    InstrumentDetailDialog newFragment = new InstrumentDetailDialog();
-					    newFragment.setInstrument(instrument);
-					    newFragment.show(ft, "dialog");
+					// Create and show the dialog.
+					InstrumentDetailDialog newFragment = new InstrumentDetailDialog();
+					newFragment.setInstrument(instrument);
+					newFragment.show(ft, "dialog");
 				}
 			});
 		}

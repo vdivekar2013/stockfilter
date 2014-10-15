@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
@@ -33,8 +34,8 @@
         android:nextFocusDown="@+id/editText2" >
 
         <requestFocus />
-        <requestFocus />
 
+        <requestFocus />
     </EditText>
 
     <LinearLayout
@@ -74,16 +75,25 @@
             android:background="@color/LightCoral"
             android:gravity="center_horizontal"
             android:text="@string/ltpTitle" />
-
     </LinearLayout>
 
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/adView"
         android:layout_below="@+id/header"
         android:layout_centerHorizontal="true" >
+
     </ListView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-5650476482162625/4038884190" />
 
     <Button
         android:id="@+id/button1"
